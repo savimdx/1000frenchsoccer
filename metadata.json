@@ -1,0 +1,8 @@
+{
+  "name": "Remix2 +1000 Séances d’ Entraînement de Football Prêtes à l’Emploi",
+  "description": "Imported from GitHub: savimdx/nees-sdd-344566",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

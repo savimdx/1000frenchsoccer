@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+html {
+  font-size: 17px;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+/* Fix mobile tap highlights */
+*, ::before, ::after {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Poppins", ui-monospace, SFMono-Regular, monospace;
+  --animate-marquee: marquee 30s linear infinite;
+  
+  @keyframes marquee {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+  }
+}
+
+/* Marquee hardware acceleration */
+.animate-marquee {
+  will-change: transform;
+}
+
+@keyframes badge-pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 14px -2px rgba(245, 158, 11, 0.45);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px -2px rgba(245, 158, 11, 0.75);
+  }
+}
+
+@keyframes flame-glow {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.18) rotate(-7deg);
+  }
+  75% {
+    transform: scale(1.18) rotate(7deg);
+  }
+}
+
+.animate-badge-pulse {
+  animation: badge-pulse-scale 2s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+.animate-flame-bounce {
+  animation: flame-glow 1.4s ease-in-out infinite;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+
