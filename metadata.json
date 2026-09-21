@@ -1,6 +1,6 @@
 {
-  "name": "Remix2 +1000 Séances d’ Entraînement de Football Prêtes à l’Emploi",
-  "description": "Imported from GitHub: savimdx/nees-sdd-344566",
+  "name": "+1000 Séances d’ Entraînement de Football Prêtes à l’Emploi",
+  "description": "+1000 Séances d’ Entraînement de Football Prêtes à l’Emploi - Méthodologie complète, exercices illustrés et fiches clés en main pour entraîneurs.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

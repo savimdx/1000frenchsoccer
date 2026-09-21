@@ -128,6 +128,7 @@ export default function App() {
   const checkoutUrl = "https://pay.hotmart.com/D107656525T?checkoutMode=10";
 
   useEffect(() => {
+    document.title = "+1000 Séances d’ Entraînement de Football Prêtes à l’Emploi";
     const now = Math.floor(Date.now() / 1000);
     const newExpiration = now + 1800;
     safeLocalStorage.setItem('urgency_timer_30m', newExpiration.toString());
