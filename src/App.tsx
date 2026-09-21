@@ -692,15 +692,15 @@ export default function App() {
             <div id="scroll-target-oferta" className="h-[1px] bg-slate-100 max-w-md mx-auto my-6" />
 
             {/* Price section */}
-            <div id="precio-oferta" className="text-center space-y-1.5 mb-6">
+            <div id="precio-oferta" className="text-center space-y-2 mb-6">
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-bold text-slate-500">
                 <span>Au lieu de <span className="text-red-500 font-extrabold line-through">{convertAndFormat(391)}</span></span>
                 <span className="bg-emerald-100 text-emerald-700 text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                   -90%
                 </span>
               </div>
-              <div className="flex items-baseline justify-center py-3 sm:py-6 px-1 w-full overflow-visible">
-                <span className="text-[3.6rem] min-[360px]:text-[4.25rem] min-[400px]:text-[4.85rem] sm:text-8xl md:text-9xl lg:text-[10.5rem] font-black text-orange-500 font-sans tracking-tight drop-shadow-lg transition-all duration-300 whitespace-nowrap leading-none select-none">
+              <div className="flex items-baseline justify-center py-4 sm:py-8 px-1 w-full overflow-visible">
+                <span className="text-[5rem] min-[360px]:text-[5.8rem] min-[400px]:text-[6.5rem] sm:text-[9rem] md:text-[11rem] lg:text-[13.5rem] font-black text-orange-500 font-sans tracking-tight drop-shadow-xl transition-all duration-300 whitespace-nowrap leading-none select-none">
                   {formattedPrice}
                 </span>
               </div>
