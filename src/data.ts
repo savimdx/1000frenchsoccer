@@ -128,12 +128,12 @@ export const BONUSES: BonusItem[] = [
   {
     id: "bon-4",
     number: 4,
-    title: "Préparation Physique Football",
-    description: "Méthode complète de conditionnement athlétique pour footballeurs : endurance spécifique, explosivité, renforcement musculaire et prévention des blessures.",
+    title: "Mindset Zinédine Zidane",
+    description: "Les clés du calme sous pression, du leadership par l'exemple, de l'élégance technique et de la gestion des grands rendez-vous décisifs.",
     originalPrice: 29,
-    tag: "CONDITION PHYSIQUE & ATHLÉTISME",
-    image: "https://i.ibb.co/hJRjPL7W/Chat-GPT-Image-21-de-set-de-2026-19-55-53-1.png",
-    fallbackImage: "https://i.ibb.co/hJRjPL7W/Chat-GPT-Image-21-de-set-de-2026-19-55-53-1.png"
+    tag: "CALME & VICTOIRE DÉCISIVE",
+    image: "/images/bono_zidane.webp",
+    fallbackImage: "/images/bono_zidane.webp"
   },
   {
     id: "bon-5",
@@ -194,6 +194,16 @@ export const BONUSES: BonusItem[] = [
     tag: "BANQUE VIDÉO COMPLÈTE (+600 SÉANCES)",
     image: "/images/bono_videos_football.webp",
     fallbackImage: "/images/bono_videos_football.webp"
+  },
+  {
+    id: "bon-11",
+    number: 11,
+    title: "Préparation Physique Football",
+    description: "Méthode complète de conditionnement athlétique pour footballeurs : endurance spécifique, explosivité, renforcement musculaire et prévention des blessures.",
+    originalPrice: 29,
+    tag: "CONDITION PHYSIQUE & ATHLÉTISME",
+    image: "https://i.ibb.co/hJRjPL7W/Chat-GPT-Image-21-de-set-de-2026-19-55-53-1.png",
+    fallbackImage: "https://i.ibb.co/hJRjPL7W/Chat-GPT-Image-21-de-set-de-2026-19-55-53-1.png"
   }
 ];
 
@@ -253,8 +263,8 @@ export const FAQS: FAQItem[] = [
   },
   {
     id: "faq-5",
-    question: "Les 10 bonus offerts sont-ils réellement inclus ?",
-    answer: "Oui, les 10 bonus présentés sont inclus à 100 % gratuitement dans l'offre promotionnelle d'aujourd'hui. Ils sont automatiquement ajoutés à votre espace de téléchargement lors de votre commande."
+    question: "Les 11 bonus offerts sont-ils réellement inclus ?",
+    answer: "Oui, les 11 bonus présentés sont inclus à 100 % gratuitement dans l'offre promotionnelle d'aujourd'hui. Ils sont automatiquement ajoutés à votre espace de téléchargement lors de votre commande."
   }
 ];
 

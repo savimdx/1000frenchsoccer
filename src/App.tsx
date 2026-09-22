@@ -298,13 +298,13 @@ export default function App() {
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-8">
             <div className="inline-flex items-center gap-2 bg-amber-400 text-slate-950 px-4 py-1.5 rounded-full font-black text-xs sm:text-sm uppercase tracking-widest font-mono shadow-md animate-badge-pulse">
-              <Flame className="w-5 h-5 sm:w-6 sm:h-6 fill-current animate-flame-bounce flex-shrink-0" /> 10 BONUS EXCLUSIFS OFFERTS AUJOURD'HUI
+              <Flame className="w-5 h-5 sm:w-6 sm:h-6 fill-current animate-flame-bounce flex-shrink-0" /> 11 BONUS EXCLUSIFS OFFERTS AUJOURD'HUI
             </div>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-              Recevez aujourd'hui ces 10 Bonus Exclusifs (100 % Gratuits)
+              Recevez aujourd'hui ces 11 Bonus Exclusifs (100 % Gratuits)
             </h2>
             <p className="text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
-              Commandez votre bibliothèque d'entraînements aujourd'hui pour recevoir en cadeau ces dix manuels méthodologiques, vidéothèques et ressources exclusives de haute valeur.
+              Commandez votre bibliothèque d'entraînements aujourd'hui pour recevoir en cadeau ces onze manuels méthodologiques, vidéothèques et ressources exclusives de haute valeur.
             </p>
           </div>
 
@@ -641,7 +641,7 @@ export default function App() {
                 Pack Complet d'Entraînement de Football
               </h3>
               <p className="text-xs sm:text-sm text-orange-500 font-semibold italic">
-                Programme principal + 10 bonus exclusifs offerts
+                Programme principal + 11 bonus exclusifs offerts
               </p>
             </div>
 
@@ -697,7 +697,7 @@ export default function App() {
             {/* Price section */}
             <div id="precio-oferta" className="text-center space-y-2 mb-6">
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-bold text-slate-500">
-                <span>Au lieu de <span className="text-red-500 font-extrabold line-through">{convertAndFormat(391)}</span></span>
+                <span>Au lieu de <span className="text-red-500 font-extrabold line-through">{convertAndFormat(420)}</span></span>
                 <span className="bg-emerald-100 text-emerald-700 text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                   -90%
                 </span>
