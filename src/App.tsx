@@ -125,7 +125,7 @@ export default function App() {
   const [expandedFaq, setExpandedFaq] = useState<string | null>(null);
   const [timeLeft, setTimeLeft] = useState<number>(1800); // 30 minutes in seconds
   const [isVideoPlayRequested, setIsVideoPlayRequested] = useState<boolean>(false);
-  const checkoutUrl = "https://pay.hotmart.com/D107656525T?checkoutMode=10";
+  const checkoutUrl = "https://pay.hotmart.com/D107656525T?off=62hho10h&bid=1790095267992";
 
   useEffect(() => {
     document.title = "+1000 Séances d’ Entraînement de Football Prêtes à l’Emploi";

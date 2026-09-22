@@ -66,10 +66,10 @@ export default function PurchaseModal({ isOpen, onClose }: PurchaseModalProps) {
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 my-5 space-y-2">
               <div className="flex justify-between items-center">
                 <span className="text-xs text-slate-700 font-medium">Pack +1000 Séances d'Entraînement de Football (Numérique)</span>
-                <span className="text-xs text-slate-400 line-through">{convertAndFormat(391)}</span>
+                <span className="text-xs text-slate-400 line-through">{convertAndFormat(420)}</span>
               </div>
               <div className="flex justify-between items-center text-emerald-600">
-                <span className="text-xs font-semibold">10 Bonus Exclusifs Inclus (Vidéos, Manuels & Guides)</span>
+                <span className="text-xs font-semibold">11 Bonus Exclusifs Inclus (Vidéos, Manuels & Guides)</span>
                 <span className="text-xs font-bold uppercase">OFFERT</span>
               </div>
               <div className="h-[1px] bg-slate-200 my-2" />
