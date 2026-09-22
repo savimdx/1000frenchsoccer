@@ -310,7 +310,7 @@ export default function App() {
 
           {/* Bonuses layout */}
           <div className="flex flex-wrap justify-center gap-8">
-            {BONUSES.map((bonus) => (
+            {BONUSES.map((bonus, index) => (
               <div
                 key={bonus.id}
                 className="bg-white border border-slate-100 rounded-[24px] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between p-5 relative group w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)]"
@@ -325,9 +325,11 @@ export default function App() {
                         alt={bonus.title} 
                         className="max-h-full max-w-full w-auto h-auto object-contain drop-shadow-md transform transition-transform duration-300 group-hover:scale-105"
                         referrerPolicy="no-referrer"
-                        loading="eager"
-                        fetchPriority="auto"
+                        loading={index < 4 ? "eager" : "lazy"}
+                        fetchPriority={index < 4 ? "high" : "auto"}
                         decoding="async"
+                        width="320"
+                        height="320"
                       />
                     </div>
                   ) : (
@@ -461,8 +463,8 @@ export default function App() {
                       alt={`Page d'exemple ${idx + 1} - copie`} 
                       className="w-full h-full object-contain bg-white rounded-lg select-none pointer-events-none"
                       referrerPolicy="no-referrer"
-                      loading="eager"
-                      fetchPriority="high"
+                      loading="lazy"
+                      fetchPriority="low"
                       decoding="async"
                       width="320"
                       height="450"
@@ -531,8 +533,8 @@ export default function App() {
                             alt={testimonial.name}
                             className="w-10 h-10 rounded-full object-cover"
                             referrerPolicy="no-referrer"
-                            loading="eager"
-                            fetchPriority="auto"
+                            loading="lazy"
+                            fetchPriority="low"
                             decoding="async"
                             width="40"
                             height="40"
@@ -585,8 +587,8 @@ export default function App() {
                             alt={testimonial.name}
                             className="w-10 h-10 rounded-full object-cover"
                             referrerPolicy="no-referrer"
-                            loading="eager"
-                            fetchPriority="auto"
+                            loading="lazy"
+                            fetchPriority="low"
                             decoding="async"
                             width="40"
                             height="40"

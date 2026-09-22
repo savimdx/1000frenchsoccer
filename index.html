@@ -99,7 +99,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://i.postimg.cc" />
-    <link rel="preconnect" href="https://i.ibb.co" />
+    <link rel="preconnect" href="https://i.ibb.co" crossorigin />
     <link rel="preconnect" href="https://fast.wistia.com" />
     <link rel="preconnect" href="https://pay.hotmart.com" />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
@@ -112,10 +112,11 @@
     <!-- Parallel load Google Fonts to eliminate CSS @import blocking - optimized weights -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
 
-    <!-- Preload critical Hero and Offer images for instant zero-delay first paint -->
+    <!-- Preload critical Hero, Sample and First Bonus images for instant zero-delay paint -->
     <link rel="preload" as="image" href="/images/hero_pack.webp" type="image/webp" fetchpriority="high" />
-    <link rel="preload" as="image" href="/images/sample_1.webp" type="image/webp" />
-    <link rel="preload" as="image" href="/images/bono_1.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/images/sample_1.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/bono_neymar.webp" type="image/webp" />
+    <link rel="preload" as="image" href="https://i.ibb.co/hJRjPL7W/Chat-GPT-Image-21-de-set-de-2026-19-55-53-1.png" fetchpriority="high" />
 
     <!-- Fast parallel image preloader to eliminate load delays across all sections -->
     <script>
@@ -127,26 +128,30 @@
           "/images/sample_3.webp",
           "/images/sample_4.webp",
           "/images/sample_5.webp",
-          "/images/bono_1.webp",
-          "/images/bono_2.webp",
-          "/images/bono_3.webp",
-          "/images/bono_4.webp",
-          "/images/bono_5.webp",
-          "/images/bono_6.webp",
-          "/images/bono_7.webp",
-          "/images/bono_8.webp",
-          "/images/bono_9.webp",
+          "/images/bono_neymar.webp",
+          "/images/bono_mourinho.webp",
+          "/images/bono_guardiola.webp",
+          "https://i.ibb.co/hJRjPL7W/Chat-GPT-Image-21-de-set-de-2026-19-55-53-1.png",
+          "/images/bono_250_fiches.webp",
+          "/images/bono_50_physique.webp",
+          "/images/bono_100_vitesse.webp",
+          "/images/bono_gardiens.webp",
+          "/images/bono_petit_materiel.webp",
+          "/images/bono_videos_football.webp",
           "/images/testimonial_1.webp",
           "/images/testimonial_2.webp",
           "/images/testimonial_3.webp",
           "/images/author.webp"
         ];
-        // Instantly prefetch all images into browser cache with high concurrency
+        // Instantly prefetch and decode all catalog images with high concurrency
         for (var i = 0; i < catalogImages.length; i++) {
           var img = new Image();
           img.decoding = "async";
           img.referrerPolicy = "no-referrer";
           img.src = catalogImages[i];
+          if (img.decode) {
+            img.decode().catch(function() {});
+          }
         }
       })();
     </script>

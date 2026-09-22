@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BookOpen } from 'lucide-react';
 
+// Global cache tracking URLs that are already confirmed loaded and decoded in memory
+export const loadedImageGlobalCache = new Set<string>();
+
 export interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
@@ -30,18 +33,23 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [currentSrc, setCurrentSrc] = useState(src);
   const [triedFallback, setTriedFallback] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(() => loadedImageGlobalCache.has(src));
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     setCurrentSrc(src);
     setTriedFallback(false);
     setHasError(false);
-    setIsLoaded(false);
+    if (loadedImageGlobalCache.has(src)) {
+      setIsLoaded(true);
+    } else {
+      setIsLoaded(false);
+    }
   }, [src]);
 
   useEffect(() => {
     if (imgRef.current && imgRef.current.complete && imgRef.current.naturalWidth > 0) {
+      loadedImageGlobalCache.add(currentSrc);
       setIsLoaded(true);
     }
   }, [currentSrc]);
@@ -50,13 +58,14 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     if (fallbackSrc && !triedFallback && currentSrc !== fallbackSrc) {
       setTriedFallback(true);
       setCurrentSrc(fallbackSrc);
-      setIsLoaded(false);
+      setIsLoaded(loadedImageGlobalCache.has(fallbackSrc));
     } else {
       setHasError(true);
     }
   };
 
   const handleLoad = () => {
+    loadedImageGlobalCache.add(currentSrc);
     setIsLoaded(true);
   };
 
@@ -79,7 +88,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       // @ts-ignore
       fetchPriority={fetchPriority}
       referrerPolicy={referrerPolicy}
-      className={`${className} transition-opacity duration-200 ${isLoaded ? 'opacity-100' : 'opacity-90'}`}
+      className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-95'} transition-opacity duration-150`}
       onLoad={handleLoad}
       onError={handleError}
       {...props}

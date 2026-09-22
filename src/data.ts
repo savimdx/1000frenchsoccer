@@ -128,12 +128,12 @@ export const BONUSES: BonusItem[] = [
   {
     id: "bon-4",
     number: 4,
-    title: "Mindset Zinédine Zidane",
-    description: "L'art du management des grands talents, le calme dans les moments décisifs et l'intelligence situationnelle sur et en dehors du terrain.",
+    title: "Préparation Physique Football",
+    description: "Méthode complète de conditionnement athlétique pour footballeurs : endurance spécifique, explosivité, renforcement musculaire et prévention des blessures.",
     originalPrice: 29,
-    tag: "CALME & MANAGEMENT D'ÉLITE",
-    image: "/images/bono_zidane.webp",
-    fallbackImage: "/images/bono_zidane.webp"
+    tag: "CONDITION PHYSIQUE & ATHLÉTISME",
+    image: "https://i.ibb.co/hJRjPL7W/Chat-GPT-Image-21-de-set-de-2026-19-55-53-1.png",
+    fallbackImage: "https://i.ibb.co/hJRjPL7W/Chat-GPT-Image-21-de-set-de-2026-19-55-53-1.png"
   },
   {
     id: "bon-5",
