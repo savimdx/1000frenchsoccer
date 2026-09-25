@@ -67,11 +67,11 @@ const safeLocalStorage = {
 };
 
 const PRODUCT_IMAGES = [
-  { src: "/images/sample_1.webp", fallback: "https://i.ibb.co/rGHxy8g9/Screenshot-20260917-152413-Adobe-Acrobat.jpg" },
-  { src: "/images/sample_2.webp", fallback: "https://i.ibb.co/XfDVf1f5/Screenshot-20260917-152438-Adobe-Acrobat.jpg" },
-  { src: "/images/sample_3.webp", fallback: "https://i.ibb.co/d0RCnbHc/Screenshot-20260917-152559-Adobe-Acrobat.jpg" },
-  { src: "/images/sample_4.webp", fallback: "https://i.ibb.co/cSmthjLn/Screenshot-20260917-152621-Adobe-Acrobat.jpg" },
-  { src: "/images/sample_5.webp", fallback: "https://i.ibb.co/d0DhJLjz/Screenshot-20260917-152640-Adobe-Acrobat.jpg" }
+  { src: "/images/sample_1.webp", fallback: "/images/sample_1.webp" },
+  { src: "/images/sample_2.webp", fallback: "/images/sample_2.webp" },
+  { src: "/images/sample_3.webp", fallback: "/images/sample_3.webp" },
+  { src: "/images/sample_4.webp", fallback: "/images/sample_4.webp" },
+  { src: "/images/sample_5.webp", fallback: "/images/sample_5.webp" }
 ];
 
 declare global {
@@ -208,7 +208,7 @@ export default function App() {
           <div className="my-6 flex justify-center w-full max-w-3xl sm:max-w-4xl relative mx-auto">
             <OptimizedImage 
               src="/images/hero_pack.webp" 
-              fallbackSrc="https://i.ibb.co/Cg3cYNm/Chat-GPT-Image-10-de-set-de-2026-14-12-29.png"
+              fallbackSrc="/images/hero_pack.webp"
               alt="Pack Méthodologique de Football - +1000 Séances" 
               className="w-full max-w-2xl h-auto max-h-[550px] object-contain rounded-2xl sm:rounded-3xl shadow-2xl transition-transform duration-300 hover:scale-[1.01]"
               referrerPolicy="no-referrer"
@@ -649,7 +649,7 @@ export default function App() {
             <div className="flex justify-center mb-8 relative w-full min-h-[300px] sm:min-h-[420px] md:min-h-[480px]">
               <OptimizedImage
                 src="/images/hero_pack.webp"
-                fallbackSrc="https://i.ibb.co/Cg3cYNm/Chat-GPT-Image-10-de-set-de-2026-14-12-29.png"
+                fallbackSrc="/images/hero_pack.webp"
                 alt="Pack Complet d'Entraînement de Football"
                 referrerPolicy="no-referrer"
                 className="max-w-full h-full max-h-[500px] object-contain rounded-2xl shadow-xl transition-transform duration-300 hover:scale-[1.02]"

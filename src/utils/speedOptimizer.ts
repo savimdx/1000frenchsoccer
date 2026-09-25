@@ -14,6 +14,7 @@ import bono100VitesseImg from '../assets/images/bono_100_vitesse.webp';
 import bonoGardiensImg from '../assets/images/bono_gardiens.webp';
 import bonoPetitMaterielImg from '../assets/images/bono_petit_materiel.webp';
 import bonoVideosFootballImg from '../assets/images/bono_videos_football.webp';
+import bonoPrepPhysiqueImg from '../assets/images/bono_prep_physique.webp';
 import authorImg from '../assets/images/author.webp';
 import { loadedImageGlobalCache } from '../components/OptimizedImage';
 
@@ -44,6 +45,7 @@ export const SECONDARY_IMAGES = [
   bonoGardiensImg,
   bonoPetitMaterielImg,
   bonoVideosFootballImg,
+  bonoPrepPhysiqueImg,
   authorImg,
   '/images/sample_2.webp',
   '/images/sample_3.webp',
@@ -57,7 +59,7 @@ export const SECONDARY_IMAGES = [
   '/images/bono_gardiens.webp',
   '/images/bono_petit_materiel.webp',
   '/images/bono_videos_football.webp',
-  'https://i.ibb.co/hJRjPL7W/Chat-GPT-Image-21-de-set-de-2026-19-55-53-1.png',
+  '/images/bono_prep_physique.webp',
   '/images/testimonial_1.webp',
   '/images/testimonial_2.webp',
   '/images/testimonial_3.webp',

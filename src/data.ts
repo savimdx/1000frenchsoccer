@@ -103,7 +103,7 @@ export const BONUSES: BonusItem[] = [
     originalPrice: 29,
     tag: "CRÉATIVITÉ & AUDACE",
     image: "/images/bono_neymar.webp",
-    fallbackImage: "https://i.ibb.co/v6DJKhfY/Chat-GPT-Image-16-de-set-de-2026-11-21-06.png"
+    fallbackImage: "/images/bono_neymar.webp"
   },
   {
     id: "bon-2",
@@ -113,7 +113,7 @@ export const BONUSES: BonusItem[] = [
     originalPrice: 29,
     tag: "LEADERSHIP & RIGUEUR",
     image: "/images/bono_mourinho.webp",
-    fallbackImage: "https://i.ibb.co/2YmgvqtJ/Chat-GPT-Image-16-de-set-de-2026-11-25-03.png"
+    fallbackImage: "/images/bono_mourinho.webp"
   },
   {
     id: "bon-3",
@@ -123,7 +123,7 @@ export const BONUSES: BonusItem[] = [
     originalPrice: 29,
     tag: "JEU DE POSITION & TACTIQUE",
     image: "/images/bono_guardiola.webp",
-    fallbackImage: "https://i.ibb.co/0j0YJWxQ/Chat-GPT-Image-16-de-set-de-2026-11-27-10.png"
+    fallbackImage: "/images/bono_guardiola.webp"
   },
   {
     id: "bon-4",
@@ -143,7 +143,7 @@ export const BONUSES: BonusItem[] = [
     originalPrice: 39,
     tag: "FICHES DE TERRAIN CLÉS EN MAIN",
     image: "/images/bono_250_fiches.webp",
-    fallbackImage: "https://i.ibb.co/V0dLxf1v/Chat-GPT-Image-16-de-set-de-2026-12-01-12.png"
+    fallbackImage: "/images/bono_250_fiches.webp"
   },
   {
     id: "bon-6",
@@ -153,7 +153,7 @@ export const BONUSES: BonusItem[] = [
     originalPrice: 27,
     tag: "PHYSIQUE INTÉGRÉ AVEC BALLON",
     image: "/images/bono_50_physique.webp",
-    fallbackImage: "https://i.ibb.co/Q39bxFFY/Chat-GPT-Image-16-de-set-de-2026-12-04-33.png"
+    fallbackImage: "/images/bono_50_physique.webp"
   },
   {
     id: "bon-7",
@@ -163,7 +163,7 @@ export const BONUSES: BonusItem[] = [
     originalPrice: 29,
     tag: "VITESSE & EXPLOSIVITÉ",
     image: "/images/bono_100_vitesse.webp",
-    fallbackImage: "https://i.ibb.co/1CFcs7n/Chat-GPT-Image-16-de-set-de-2026-12-19-36.png"
+    fallbackImage: "/images/bono_100_vitesse.webp"
   },
   {
     id: "bon-8",
@@ -173,7 +173,7 @@ export const BONUSES: BonusItem[] = [
     originalPrice: 35,
     tag: "SPÉCIAL GARDIENS DE BUT",
     image: "/images/bono_gardiens.webp",
-    fallbackImage: "https://i.ibb.co/dwBK2vhR/Chat-GPT-Image-16-de-set-de-2026-14-56-23.png"
+    fallbackImage: "/images/bono_gardiens.webp"
   },
   {
     id: "bon-9",
@@ -183,7 +183,7 @@ export const BONUSES: BonusItem[] = [
     originalPrice: 25,
     tag: "ÉQUIPEMENT LÉGER & CIRCUIT",
     image: "/images/bono_petit_materiel.webp",
-    fallbackImage: "https://i.ibb.co/NdVk4vH3/Chat-GPT-Image-16-de-set-de-2026-14-59-32.png"
+    fallbackImage: "/images/bono_petit_materiel.webp"
   },
   {
     id: "bon-10",
@@ -202,8 +202,8 @@ export const BONUSES: BonusItem[] = [
     description: "Méthode complète de conditionnement athlétique pour footballeurs : endurance spécifique, explosivité, renforcement musculaire et prévention des blessures.",
     originalPrice: 29,
     tag: "CONDITION PHYSIQUE & ATHLÉTISME",
-    image: "https://i.ibb.co/hJRjPL7W/Chat-GPT-Image-21-de-set-de-2026-19-55-53-1.png",
-    fallbackImage: "https://i.ibb.co/hJRjPL7W/Chat-GPT-Image-21-de-set-de-2026-19-55-53-1.png"
+    image: "/images/bono_prep_physique.webp",
+    fallbackImage: "https://i.ibb.co/kgdVZwP2/Chat-GPT-Image-21-de-set-de-2026-19-55-53.png"
   }
 ];
 
