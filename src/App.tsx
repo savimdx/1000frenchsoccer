@@ -125,7 +125,7 @@ export default function App() {
   const [expandedFaq, setExpandedFaq] = useState<string | null>(null);
   const [timeLeft, setTimeLeft] = useState<number>(1800); // 30 minutes in seconds
   const [isVideoPlayRequested, setIsVideoPlayRequested] = useState<boolean>(false);
-  const checkoutUrl = "https://pay.hotmart.com/Y107386734G?checkoutMode=10";
+  const checkoutUrl = "https://pay.hotmart.com/Y107386734G?off=emvuj3ke";
 
   useEffect(() => {
     document.title = "+1000 Séances d’ Entraînement de Football Prêtes à l’Emploi";
@@ -703,7 +703,10 @@ export default function App() {
                 </span>
               </div>
               <div className="flex items-baseline justify-center py-4 sm:py-8 px-1 w-full overflow-visible">
-                <span className="text-[5rem] min-[360px]:text-[5.8rem] min-[400px]:text-[6.5rem] sm:text-[9rem] md:text-[11rem] lg:text-[13.5rem] font-black text-orange-500 font-sans tracking-tight drop-shadow-xl transition-all duration-300 whitespace-nowrap leading-none select-none">
+                <span
+                  style={{ fontFamily: "'Arial Black', 'Montserrat', Impact, sans-serif" }}
+                  className="text-[4.8rem] min-[360px]:text-[5.5rem] min-[400px]:text-[6.2rem] sm:text-[7.5rem] md:text-[9rem] lg:text-[10.5rem] font-black text-orange-500 tracking-tight leading-none whitespace-nowrap select-none transition-all duration-300"
+                >
                   {formattedPrice}
                 </span>
               </div>

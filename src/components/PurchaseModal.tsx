@@ -75,7 +75,12 @@ export default function PurchaseModal({ isOpen, onClose }: PurchaseModalProps) {
               <div className="h-[1px] bg-slate-200 my-2" />
               <div className="flex justify-between items-center font-bold">
                 <span className="text-sm text-slate-800">Total à régler aujourd'hui :</span>
-                <span className="text-2xl text-amber-600 font-mono font-black whitespace-nowrap">{formattedPrice}</span>
+                <span
+                  style={{ fontFamily: "'Arial Black', 'Montserrat', Impact, sans-serif" }}
+                  className="text-2xl text-orange-500 font-black whitespace-nowrap"
+                >
+                  {formattedPrice}
+                </span>
               </div>
             </div>
 
