@@ -127,14 +127,14 @@ export interface CurrencyContextProps {
 const CurrencyContext = createContext<CurrencyContextProps | undefined>(undefined);
 
 export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const originalPrice = 17;
+  const originalPrice = 17.90;
   const [currencyCode, setCurrencyCode] = useState<string>('EUR');
   const [rate, setRate] = useState<number>(1);
   const [ratesCache, setRatesCache] = useState<Record<string, number>>(fallbackRates);
   const [isConverting, setIsConverting] = useState<boolean>(false);
   const [detectedCountry, setDetectedCountry] = useState<string>('ES');
 
-  // Formatter helper for EUR currency: e.g. "17 €"
+  // Formatter helper for EUR currency: e.g. "17,90 €"
   const formatValue = (val: number): string => {
     try {
       const numFormatted = val.toLocaleString('fr-FR', {
@@ -163,9 +163,9 @@ export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return formatValue(val);
   };
 
-  const convertedPrice = 17;
+  const convertedPrice = 17.90;
   const currencySymbol = '€';
-  const formattedPrice = '17 €';
+  const formattedPrice = '17,90 €';
 
   return (
     <CurrencyContext.Provider
