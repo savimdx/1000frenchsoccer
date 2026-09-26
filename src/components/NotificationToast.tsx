@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { ShoppingBag, CheckCircle } from 'lucide-react';
+import { useCurrency } from '../context/CurrencyContext';
 
 interface PurchaseAlert {
   name: string;
@@ -7,7 +8,7 @@ interface PurchaseAlert {
   timeAgo: string;
 }
 
-const PURCHASE_POOL: PurchaseAlert[] = [
+const PURCHASE_POOL_FR: PurchaseAlert[] = [
   { name: "Thomas Martin", location: "Paris, France", timeAgo: "il y a 2 min" },
   { name: "Alexandre Dubois", location: "Lyon, France", timeAgo: "il y a 4 min" },
   { name: "Julien Bernard", location: "Marseille, France", timeAgo: "il y a 1 min" },
@@ -18,9 +19,39 @@ const PURCHASE_POOL: PurchaseAlert[] = [
   { name: "Sébastien David", location: "Strasbourg, France", timeAgo: "il y a 6 min" }
 ];
 
+const PURCHASE_POOL_CH: PurchaseAlert[] = [
+  { name: "Marc Schneider", location: "Genève, Suisse", timeAgo: "il y a 2 min" },
+  { name: "Laurent Favre", location: "Lausanne, Suisse", timeAgo: "il y a 4 min" },
+  { name: "Daniel Weber", location: "Zurich, Suisse", timeAgo: "il y a 1 min" },
+  { name: "Stéphane Blanc", location: "Fribourg, Suisse", timeAgo: "il y a 5 min" },
+  { name: "Cédric Mayor", location: "Neuchâtel, Suisse", timeAgo: "il y a 30 sec" },
+  { name: "Nicolas Rochat", location: "Sion, Suisse", timeAgo: "il y a 6 min" }
+];
+
+const PURCHASE_POOL_BE: PurchaseAlert[] = [
+  { name: "Thierry Wouters", location: "Bruxelles, Belgique", timeAgo: "il y a 2 min" },
+  { name: "Philippe Lambert", location: "Liège, Belgique", timeAgo: "il y a 4 min" },
+  { name: "Maxime Dumont", location: "Namur, Belgique", timeAgo: "il y a 1 min" },
+  { name: "Benoît Renard", location: "Charleroi, Belgique", timeAgo: "il y a 5 min" },
+  { name: "Julien Peeters", location: "Waterloo, Belgique", timeAgo: "il y a 30 sec" },
+  { name: "Arnaud Collet", location: "Mons, Belgique", timeAgo: "il y a 6 min" }
+];
+
 export default function NotificationToast() {
-  const [current, setCurrent] = useState<PurchaseAlert>(PURCHASE_POOL[0]);
+  const { detectedCountry } = useCurrency();
+
+  const purchasePool = useMemo(() => {
+    if (detectedCountry === 'CH') return PURCHASE_POOL_CH;
+    if (detectedCountry === 'BE') return PURCHASE_POOL_BE;
+    return PURCHASE_POOL_FR;
+  }, [detectedCountry]);
+
+  const [current, setCurrent] = useState<PurchaseAlert>(purchasePool[0]);
   const [visible, setVisible] = useState<boolean>(false);
+
+  useEffect(() => {
+    setCurrent(purchasePool[0]);
+  }, [purchasePool]);
 
   useEffect(() => {
     // Delay first toast showing
@@ -34,8 +65,8 @@ export default function NotificationToast() {
       
       // Select random new purchase and show again
       setTimeout(() => {
-        const randomIndex = Math.floor(Math.random() * PURCHASE_POOL.length);
-        setCurrent(PURCHASE_POOL[randomIndex]);
+        const randomIndex = Math.floor(Math.random() * purchasePool.length);
+        setCurrent(purchasePool[randomIndex]);
         setVisible(true);
       }, 1000); // 1s to transition out before changing content
       
@@ -45,7 +76,7 @@ export default function NotificationToast() {
       clearTimeout(firstShowTimeout);
       clearInterval(interval);
     };
-  }, []);
+  }, [purchasePool]);
 
   return (
     <div

@@ -705,7 +705,7 @@ export default function App() {
               <div className="flex items-baseline justify-center py-4 sm:py-8 px-1 w-full overflow-visible">
                 <span
                   style={{ fontFamily: "'Arial Black', 'Montserrat', Impact, sans-serif" }}
-                  className="text-[3.8rem] min-[360px]:text-[4.5rem] min-[400px]:text-[5.2rem] sm:text-[7rem] md:text-[8.5rem] lg:text-[10rem] font-black text-orange-500 tracking-tight leading-none whitespace-nowrap select-none transition-all duration-300"
+                  className="text-[3.2rem] min-[360px]:text-[3.8rem] min-[400px]:text-[4.6rem] sm:text-[6.5rem] md:text-[8rem] lg:text-[9.5rem] font-black text-orange-500 tracking-tight leading-none whitespace-nowrap select-none transition-all duration-300"
                 >
                   {formattedPrice}
                 </span>
